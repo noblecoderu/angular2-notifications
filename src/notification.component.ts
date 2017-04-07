@@ -83,7 +83,7 @@ import {NotificationsService} from './notifications.service';
 
                 <div class="icon" *ngIf="item.icon !== 'bare'" [innerHTML]="safeSvg"></div>
             </div>
-            <div *ngIf="item.html" [innerHTML]="item.html"></div>
+            <div *ngIf="item.html" [innerHTML]="HTML"></div>
 
             <div class="sn-progress-loader" *ngIf="showProgressBar">
                 <span [ngStyle]="{'width': progressWidth + '%'}"></span>
@@ -287,5 +287,9 @@ export class NotificationComponent implements OnInit, OnDestroy {
         } else {
             this.notificationService.set(this.item, false);
         }
+    }
+
+    public get HTML(): SafeHtml {
+        return this.domSanitizer.bypassSecurityTrustHtml(this.item.html);
     }
 }
