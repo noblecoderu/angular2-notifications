@@ -5,6 +5,7 @@ example/basic/node_modules
 example/basic/app/**/**.js
 example/aot
 .idea
+.vscode
 .npmignore
 lib
 tests/testing-utils.d.ts
