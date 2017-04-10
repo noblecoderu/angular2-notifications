@@ -62,7 +62,7 @@ import {NotificationsService} from './notifications.service';
         <div class="simple-notification"
             [@enterLeave]="item.state"
             (click)="onClick($event)"
-            [class]="theClass"
+            [ngClass]="theClass"
 
             (mouseenter)="onEnter()"
             (mouseleave)="onLeave()">
@@ -131,7 +131,7 @@ export class NotificationComponent implements OnInit, OnDestroy {
     @Input() public showProgressBar: boolean;
     @Input() public pauseOnHover: boolean;
     @Input() public clickToClose: boolean;
-    @Input() public theClass: string;
+    @Input() public theClass: string[];
     @Input() public animate: string;
     @Input() public position: number;
     @Input() public item: Notification;

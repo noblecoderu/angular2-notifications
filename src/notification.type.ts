@@ -16,5 +16,5 @@ export interface Notification {
     maxLength?: number
     pauseOnHover?: boolean
     clickToClose?: boolean
-    theClass?: string;
+    theClass?: string[];
 }
