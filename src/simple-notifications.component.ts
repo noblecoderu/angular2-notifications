@@ -14,11 +14,9 @@ import {Subscription} from 'rxjs/Subscription';
                 [item]="a"
                 [timeOut]="timeOut"
                 [clickToClose]="clickToClose"
-                [maxLength]="maxLength"
                 [showProgressBar]="showProgressBar"
                 [pauseOnHover]="pauseOnHover"
                 [theClass]="theClass"
-                [rtl]="rtl"
                 [animate]="animate"
                 [position]="i"
                 >
@@ -70,12 +68,10 @@ export class SimpleNotificationsComponent implements OnInit, OnDestroy {
 
     // Sent values
     public timeOut: number = 0;
-    public maxLength: number = 0;
     public clickToClose: boolean = true;
     public showProgressBar: boolean = true;
     public pauseOnHover: boolean = true;
     public theClass: string = '';
-    public rtl: boolean = false;
     public animate: 'fromRight' | 'fromLeft' | 'rotate' | 'scale' = 'fromRight';
 
     constructor(private _service: NotificationsService) {}
@@ -138,7 +134,7 @@ export class SimpleNotificationsComponent implements OnInit, OnDestroy {
     // Check if notifications should be prevented
     block(item: Notification): boolean {
 
-        let toCheck = item.component ? this.checkHtml : this.checkStandard;
+        let toCheck = this.checkStandard;
 
         if (this.preventDuplicates && this.notifications.length > 0) {
             for (let i = 0; i < this.notifications.length; i++) {
@@ -170,11 +166,7 @@ export class SimpleNotificationsComponent implements OnInit, OnDestroy {
     }
 
     checkStandard(checker: Notification, item: Notification): boolean {
-        return checker.type === item.type && checker.title === item.title && checker.content === item.content;
-    }
-
-    checkHtml(checker: Notification, item: Notification): boolean {
-        return checker.component ? checker.type === item.type && checker.title === item.title && checker.content === item.content && checker.component === item.component : false;
+        return checker.title === item.title && checker.descr === item.descr;
     }
 
     // Attach all the changes received in the options object
@@ -189,17 +181,12 @@ export class SimpleNotificationsComponent implements OnInit, OnDestroy {
     buildEmit(notification: Notification, to: boolean) {
         let toEmit: Notification = {
             createdOn: notification.createdOn,
-            type: notification.type,
             icon: notification.icon,
-            id: notification.id
+            id: notification.id,
+            title: notification.title,
+            descr: notification.descr,
+            buttons: notification.buttons
         };
-
-        if (notification.component) {
-            toEmit.component = notification.component;
-        } else {
-            toEmit.title = notification.title;
-            toEmit.content = notification.content;
-        }
 
         if (!to) {
             toEmit.destroyedOn = new Date();

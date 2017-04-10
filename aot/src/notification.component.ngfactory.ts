@@ -8,11 +8,9 @@
 
 import * as import0 from '@angular/core';
 import * as import1 from '@angular/common';
-import * as import2 from '../../src/max.pipe';
-import * as import3 from '../../src/notification.component';
-import * as import4 from '../../src/notifications.service';
-import * as import5 from '@angular/platform-browser';
-const styles_NotificationComponent:any[] = ['\n        .simple-notification {\n            width: 100%;\n            padding: 10px 20px;\n            box-sizing: border-box;\n            position: relative;\n            float: left;\n            margin-bottom: 10px;\n            color: #fff;\n            cursor: pointer;\n            transition: all 0.5s;\n        }\n\n        .simple-notification .sn-title {\n            margin: 0;\n            padding: 0 50px 0 0;\n            line-height: 30px;\n            font-size: 20px;\n        }\n\n        .simple-notification .sn-content {\n            margin: 0;\n            font-size: 16px;\n            padding: 0 50px 0 0;\n            line-height: 20px;\n        }\n\n        .simple-notification .icon {\n            position: absolute;\n            box-sizing: border-box;\n            top: 0;\n            right: 0;\n            width: 70px;\n            height: 70px;\n            padding: 10px;\n        }\n\n        .simple-notification .icon svg {\n            fill: #fff;\n        }\n\n        .simple-notification.rtl-mode {\n            direction: rtl;\n        }\n\n        .simple-notification.rtl-mode .sn-content {\n            padding: 0 0 0 50px;\n        }\n\n        .simple-notification.rtl-mode svg {\n            left: 0;\n            right: auto;\n        }\n\n        .simple-notification.error { background: #F44336; }\n        .simple-notification.success { background: #8BC34A; }\n        .simple-notification.alert { background: #ffdb5b; }\n        .simple-notification.info { background: #03A9F4; }\n\n        .simple-notification .sn-progress-loader {\n            position: absolute;\n            top: 0;\n            left: 0;\n            width: 100%;\n            height: 5px;\n        }\n\n        .simple-notification .sn-progress-loader span {\n            float: left;\n            height: 100%;\n        }\n\n        .simple-notification.success .sn-progress-loader span { background: #689F38; }\n        .simple-notification.error .sn-progress-loader span { background: #D32F2F; }\n        .simple-notification.alert .sn-progress-loader span { background: #edc242; }\n        .simple-notification.info .sn-progress-loader span { background: #0288D1; }\n        .simple-notification.bare .sn-progress-loader span { background: #ccc; }\n    '];
+import * as import2 from '../../src/notification.component';
+import * as import3 from '../../src/notifications.service';
+const styles_NotificationComponent:any[] = ['\n        .simple-notification {\n            width: 100%;\n            padding: 10px 20px;\n            box-sizing: border-box;\n            position: relative;\n            float: left;\n            margin-bottom: 10px;\n            color: #fff;\n            cursor: pointer;\n            transition: all 0.5s;\n        }}\n\n        .simple-notification .sn-progress-loader {\n            position: absolute;\n            top: 0;\n            left: 0;\n            width: 100%;\n            height: 5px;\n        }\n\n        .simple-notification .sn-progress-loader span {\n            float: left;\n            height: 100%;\n            background: #ccc;\n        }\n    '];
 export const RenderType_NotificationComponent:import0.RendererType2 = import0.ɵcrt({
   encapsulation: 2,
   styles: styles_NotificationComponent,
@@ -322,48 +320,62 @@ export const RenderType_NotificationComponent:import0.RendererType2 = import0.ɵ
 }
 );
 function View_NotificationComponent_2(l:any):import0.ɵViewDefinition {
-      return import0.ɵvid(0,[(l()(),import0.ɵeld(0,(null as any),(null as any),0,'div',[[
+  return import0.ɵvid(0,[
+      (l()(),import0.ɵeld(0,(null as any),(null as any),1,'a',[[
         'class',
-        'icon'
+        'b-notification__button'
+      ]
+      ],(null as any),[[
+        (null as any),
+        'click'
+      ]
+    ],(v,en,$event) => {
+      var ad:boolean = true;
+      if (('click' === en)) {
+        const pd_0:any = ((<any>(<any>v.parent).context.$implicit.action()) !== false);
+        ad = (pd_0 && ad);
+      }
+      return ad;
+    },(null as any),(null as any))),
+    (l()(),import0.ɵted((null as any),[
+      '',
+      ''
+    ]
+    ))
+  ]
+  ,(null as any),(ck,v) => {
+    const currVal_0:any = (<any>v.parent).context.$implicit.title;
+    ck(v,1,0,currVal_0);
+  });
+}
+function View_NotificationComponent_3(l:any):import0.ɵViewDefinition {
+  return import0.ɵvid(0,[
+      (l()(),import0.ɵeld(0,(null as any),(null as any),1,'a',[[
+        'class',
+        'b-notification__button'
       ]
       ],[[
         8,
-        'innerHTML',
-        1
+        'href',
+        4
       ]
-  ],(null as any),(null as any),(null as any),(null as any)))],(null as any),(ck,v) => {
-    var co:any = v.component;
-    const currVal_0:any = co.safeSvg;
+    ],(null as any),(null as any),(null as any),(null as any))),
+    (l()(),import0.ɵted((null as any),[
+      '',
+      ''
+    ]
+    ))
+  ]
+  ,(null as any),(ck,v) => {
+    const currVal_0:any = (<any>v.parent).context.$implicit.link;
     ck(v,0,0,currVal_0);
+    const currVal_1:any = (<any>v.parent).context.$implicit.title;
+    ck(v,1,0,currVal_1);
   });
 }
 function View_NotificationComponent_1(l:any):import0.ɵViewDefinition {
   return import0.ɵvid(0,[
-    (l()(),import0.ɵeld(0,(null as any),(null as any),11,'div',([] as any[]),(null as any),(null as any),(null as any),(null as any),(null as any))),
-    (l()(),import0.ɵted((null as any),['\n                '])),
-      (l()(),import0.ɵeld(0,(null as any),(null as any),1,'div',[[
-        'class',
-        'sn-title'
-      ]
-    ],(null as any),(null as any),(null as any),(null as any),(null as any))),
-    (l()(),import0.ɵted((null as any),[
-      '',
-      ''
-    ]
-    )),
-    (l()(),import0.ɵted((null as any),['\n                '])),
-      (l()(),import0.ɵeld(0,(null as any),(null as any),2,'div',[[
-        'class',
-        'sn-content'
-      ]
-    ],(null as any),(null as any),(null as any),(null as any),(null as any))),
-    (l()(),import0.ɵted((null as any),[
-      '',
-      ''
-    ]
-    )),
-    import0.ɵppd(2),
-    (l()(),import0.ɵted((null as any),['\n\n                '])),
+    (l()(),import0.ɵted((null as any),['\n                        '])),
     (l()(),import0.ɵand(8388608,(null as any),(null as any),1,(null as any),View_NotificationComponent_2)),
     import0.ɵdid(8192,(null as any),0,import1.NgIf,[
       import0.ViewContainerRef,
@@ -374,41 +386,27 @@ function View_NotificationComponent_1(l:any):import0.ɵViewDefinition {
         'ngIf'
       ]
     },(null as any)),
-    (l()(),import0.ɵted((null as any),['\n            ']))
-  ]
-  ,(ck,v) => {
-    var co:any = v.component;
-    const currVal_2:any = (co.item.icon !== 'bare');
-    ck(v,10,0,currVal_2);
-  },(ck,v) => {
-    var co:any = v.component;
-    const currVal_0:any = co.item.title;
-    ck(v,3,0,currVal_0);
-    const currVal_1:any = import0.ɵunv(v,6,0,ck(v,7,0,import0.ɵnov((<any>v.parent),0),co.item.content,co.maxLength));
-    ck(v,6,0,currVal_1);
-  });
-}
-function View_NotificationComponent_4(l:any):import0.ɵViewDefinition {
-  return import0.ɵvid(0,[(l()(),import0.ɵeld(0,(null as any),(null as any),0,(null as any),(null as any),(null as any),(null as any),(null as any),(null as any),(null as any)))],(null as any),(null as any));
-}
-function View_NotificationComponent_3(l:any):import0.ɵViewDefinition {
-  return import0.ɵvid(0,[
-    (l()(),import0.ɵted((null as any),['\n                '])),
-    (l()(),import0.ɵand(8388608,(null as any),(null as any),1,(null as any),View_NotificationComponent_4)),
-      import0.ɵdid(335872,(null as any),0,import1.NgComponentOutlet,[import0.ViewContainerRef],{ngComponentOutlet: [
+    (l()(),import0.ɵted((null as any),['\n                        '])),
+    (l()(),import0.ɵand(8388608,(null as any),(null as any),1,(null as any),View_NotificationComponent_3)),
+    import0.ɵdid(8192,(null as any),0,import1.NgIf,[
+      import0.ViewContainerRef,
+      import0.TemplateRef
+    ]
+      ,{ngIf: [
         0,
-        'ngComponentOutlet'
+        'ngIf'
       ]
     },(null as any)),
-    (l()(),import0.ɵted((null as any),['\n            ']))
+    (l()(),import0.ɵted((null as any),['\n                    ']))
   ]
   ,(ck,v) => {
-    var co:any = v.component;
-    const currVal_0:any = co.item.component;
+    const currVal_0:any = v.context.$implicit.action;
     ck(v,2,0,currVal_0);
+    const currVal_1:any = v.context.$implicit.link;
+    ck(v,5,0,currVal_1);
   },(null as any));
 }
-function View_NotificationComponent_5(l:any):import0.ɵViewDefinition {
+function View_NotificationComponent_4(l:any):import0.ɵViewDefinition {
   return import0.ɵvid(0,[
       (l()(),import0.ɵeld(0,(null as any),(null as any),5,'div',[[
         'class',
@@ -438,18 +436,26 @@ function View_NotificationComponent_5(l:any):import0.ɵViewDefinition {
 }
 export function View_NotificationComponent_0(l:any):import0.ɵViewDefinition {
   return import0.ɵvid(0,[
-    import0.ɵpid(0,import2.MaxPipe,([] as any[])),
     (l()(),import0.ɵted((null as any),['\n        '])),
-      (l()(),import0.ɵeld(0,(null as any),(null as any),12,'div',[[
+      (l()(),import0.ɵeld(0,(null as any),(null as any),38,'div',[[
         'class',
         'simple-notification'
       ]
-      ],[[
+    ],[
+      [
         24,
         '@enterLeave',
         0
       ]
-    ],[
+      ,
+      [
+        8,
+        'className',
+        0
+      ]
+
+    ]
+    ,[
       [
         (null as any),
         'click'
@@ -468,7 +474,7 @@ export function View_NotificationComponent_0(l:any):import0.ɵViewDefinition {
     ]
     ,(v,en,$event) => {
       var ad:boolean = true;
-      var co:import3.NotificationComponent = v.component;
+      var co:import2.NotificationComponent = v.component;
       if (('click' === en)) {
         const pd_0:any = ((<any>co.onClick($event)) !== false);
         ad = (pd_0 && ad);
@@ -483,58 +489,166 @@ export function View_NotificationComponent_0(l:any):import0.ɵViewDefinition {
       }
       return ad;
     },(null as any),(null as any))),
-    import0.ɵdid(139264,(null as any),0,import1.NgClass,[
-      import0.IterableDiffers,
-      import0.KeyValueDiffers,
-      import0.ElementRef,
-      import0.Renderer
+    (l()(),import0.ɵted((null as any),['\n\n            '])),
+      (l()(),import0.ɵeld(0,(null as any),(null as any),32,'div',[[
+        'class',
+        'b-notification'
+      ]
+    ],(null as any),(null as any),(null as any),(null as any),(null as any))),
+    (l()(),import0.ɵted((null as any),['\n                '])),
+      (l()(),import0.ɵeld(0,(null as any),(null as any),12,'div',[[
+        'class',
+        'b-notification__body'
+      ]
+    ],(null as any),(null as any),(null as any),(null as any),(null as any))),
+    (l()(),import0.ɵted((null as any),['\n                    '])),
+      (l()(),import0.ɵeld(0,(null as any),(null as any),0,'div',[[
+        'class',
+        'b-notification__icon'
+      ]
+      ],[[
+        8,
+        'innerHTML',
+        1
+      ]
+    ],(null as any),(null as any),(null as any),(null as any))),
+    (l()(),import0.ɵted((null as any),['\n                    '])),
+      (l()(),import0.ɵeld(0,(null as any),(null as any),7,'div',[[
+        'class',
+        'b-notification__content'
+      ]
+    ],(null as any),(null as any),(null as any),(null as any),(null as any))),
+    (l()(),import0.ɵted((null as any),['\n                        '])),
+      (l()(),import0.ɵeld(0,(null as any),(null as any),1,'div',[[
+        'class',
+        'b-notification__title'
+      ]
+    ],(null as any),(null as any),(null as any),(null as any),(null as any))),
+    (l()(),import0.ɵted((null as any),[
+      '',
+      ''
     ]
-    ,{
-      klass: [
+    )),
+    (l()(),import0.ɵted((null as any),['\n                        '])),
+      (l()(),import0.ɵeld(0,(null as any),(null as any),1,'div',[[
+        'class',
+        'b-notification__descr'
+      ]
+    ],(null as any),(null as any),(null as any),(null as any),(null as any))),
+    (l()(),import0.ɵted((null as any),[
+      '>',
+      ''
+    ]
+    )),
+    (l()(),import0.ɵted((null as any),['\n                    '])),
+    (l()(),import0.ɵted((null as any),['\n                '])),
+    (l()(),import0.ɵted((null as any),['\n                '])),
+      (l()(),import0.ɵeld(0,(null as any),(null as any),4,'div',[[
+        'class',
+        'b-notification__footer'
+      ]
+    ],(null as any),(null as any),(null as any),(null as any),(null as any))),
+    (l()(),import0.ɵted((null as any),['\n                    '])),
+    (l()(),import0.ɵand(8388608,(null as any),(null as any),1,(null as any),View_NotificationComponent_1)),
+    import0.ɵdid(401408,(null as any),0,import1.NgForOf,[
+      import0.ViewContainerRef,
+      import0.TemplateRef,
+      import0.IterableDiffers
+    ]
+      ,{ngForOf: [
         0,
-        'klass'
+        'ngForOf'
+      ]
+    },(null as any)),
+    (l()(),import0.ɵted((null as any),['\n                '])),
+    (l()(),import0.ɵted((null as any),['\n                '])),
+      (l()(),import0.ɵeld(0,(null as any),(null as any),9,'a',[[
+        'class',
+        'b-notification__close-btn'
+      ]
+      ],(null as any),[[
+        (null as any),
+        'click'
+      ]
+    ],(v,en,$event) => {
+      var ad:boolean = true;
+      var co:import2.NotificationComponent = v.component;
+      if (('click' === en)) {
+        const pd_0:any = ((<any>co.remove()) !== false);
+        ad = (pd_0 && ad);
+      }
+      return ad;
+    },(null as any),(null as any))),
+    (l()(),import0.ɵted((null as any),['\n                    '])),
+    (l()(),import0.ɵeld(0,(null as any),(null as any),6,':svg:svg',[
+      [
+        'class',
+        'nc-icon outline'
       ]
       ,
-      ngClass: [
-        1,
-        'ngClass'
+      [
+        'height',
+        '24'
+      ]
+      ,
+      [
+        'viewBox',
+        '0 0 24 24'
+      ]
+      ,
+      [
+        'width',
+        '24'
+      ]
+      ,
+      [
+        'xmlns',
+        'http://www.w3.org/2000/svg'
       ]
 
-    }
-    ,(null as any)),
-    import0.ɵpod([
-      'alert',
-      'error',
-      'success',
-      'info',
-      'bare',
-      'rtl-mode'
     ]
-    ),
-    (l()(),import0.ɵted((null as any),['\n\n            '])),
-    (l()(),import0.ɵand(8388608,(null as any),(null as any),1,(null as any),View_NotificationComponent_1)),
-    import0.ɵdid(8192,(null as any),0,import1.NgIf,[
-      import0.ViewContainerRef,
-      import0.TemplateRef
-    ]
-      ,{ngIf: [
-        0,
-        'ngIf'
+    ,(null as any),(null as any),(null as any),(null as any),(null as any))),
+    (l()(),import0.ɵted((null as any),['\n                        '])),
+    (l()(),import0.ɵeld(0,(null as any),(null as any),3,':svg:g',[
+      [
+        'fill',
+        'none'
       ]
-    },(null as any)),
+      ,
+      [
+        'stroke',
+        '#999'
+      ]
+      ,
+      [
+        'stroke-linecap',
+        'square'
+      ]
+      ,
+      [
+        'stroke-miterlimit',
+        '10'
+      ]
+      ,
+      [
+        'stroke-width',
+        '2'
+      ]
+
+    ]
+    ,(null as any),(null as any),(null as any),(null as any),(null as any))),
+    (l()(),import0.ɵted((null as any),['\n                            '])),
+      (l()(),import0.ɵeld(0,(null as any),(null as any),0,':svg:path',[[
+        'd',
+        'M16 8l-8 8M16 16L8 8'
+      ]
+    ],(null as any),(null as any),(null as any),(null as any),(null as any))),
+    (l()(),import0.ɵted((null as any),['\n                        '])),
+    (l()(),import0.ɵted((null as any),['\n                    '])),
+    (l()(),import0.ɵted((null as any),['\n                '])),
     (l()(),import0.ɵted((null as any),['\n            '])),
-    (l()(),import0.ɵand(8388608,(null as any),(null as any),1,(null as any),View_NotificationComponent_3)),
-    import0.ɵdid(8192,(null as any),0,import1.NgIf,[
-      import0.ViewContainerRef,
-      import0.TemplateRef
-    ]
-      ,{ngIf: [
-        0,
-        'ngIf'
-      ]
-    },(null as any)),
     (l()(),import0.ɵted((null as any),['\n\n            '])),
-    (l()(),import0.ɵand(8388608,(null as any),(null as any),1,(null as any),View_NotificationComponent_5)),
+    (l()(),import0.ɵand(8388608,(null as any),(null as any),1,(null as any),View_NotificationComponent_4)),
     import0.ɵdid(8192,(null as any),0,import1.NgIf,[
       import0.ViewContainerRef,
       import0.TemplateRef
@@ -548,28 +662,29 @@ export function View_NotificationComponent_0(l:any):import0.ɵViewDefinition {
     (l()(),import0.ɵted((null as any),['\n    ']))
   ]
   ,(ck,v) => {
-    var co:import3.NotificationComponent = v.component;
-    const currVal_1:any = co.theClass;
-    const currVal_2:any = ck(v,4,0,(co.item.type === 'alert'),(co.item.type === 'error'),(co.item.type === 'success'),(co.item.type === 'info'),(co.item.type === 'bare'),co.rtl);
-    ck(v,3,0,currVal_1,currVal_2);
-    const currVal_3:boolean = !co.item.component;
-    ck(v,7,0,currVal_3);
-    const currVal_4:any = co.item.component;
-    ck(v,10,0,currVal_4);
-    const currVal_5:any = co.showProgressBar;
-    ck(v,13,0,currVal_5);
+    var co:import2.NotificationComponent = v.component;
+    const currVal_5:any = co.item.buttons;
+    ck(v,22,0,currVal_5);
+    const currVal_6:any = co.showProgressBar;
+    ck(v,38,0,currVal_6);
   },(ck,v) => {
-    var co:import3.NotificationComponent = v.component;
+    var co:import2.NotificationComponent = v.component;
     const currVal_0:any = co.item.state;
-    ck(v,2,0,currVal_0);
+    const currVal_1:any = co.theClass;
+    ck(v,1,0,currVal_0,currVal_1);
+    const currVal_2:any = co.item.icon;
+    ck(v,7,0,currVal_2);
+    const currVal_3:any = co.item.title;
+    ck(v,12,0,currVal_3);
+    const currVal_4:any = co.item.descr;
+    ck(v,15,0,currVal_4);
   });
 }
 function View_NotificationComponent_Host_0(l:any):import0.ɵViewDefinition {
   return import0.ɵvid(0,[
     (l()(),import0.ɵeld(0,(null as any),(null as any),1,'simple-notification',([] as any[]),(null as any),(null as any),(null as any),View_NotificationComponent_0,RenderType_NotificationComponent)),
-    import0.ɵdid(122880,(null as any),0,import3.NotificationComponent,[
-      import4.NotificationsService,
-      import5.DomSanitizer,
+    import0.ɵdid(122880,(null as any),0,import2.NotificationComponent,[
+      import3.NotificationsService,
       import0.NgZone
     ]
     ,(null as any),(null as any))
@@ -578,17 +693,15 @@ function View_NotificationComponent_Host_0(l:any):import0.ɵViewDefinition {
     ck(v,1,0);
   },(null as any));
 }
-export const NotificationComponentNgFactory:import0.ComponentFactory<import3.NotificationComponent> = import0.ɵccf('simple-notification',import3.NotificationComponent,View_NotificationComponent_Host_0,{
+export const NotificationComponentNgFactory:import0.ComponentFactory<import2.NotificationComponent> = import0.ɵccf('simple-notification',import2.NotificationComponent,View_NotificationComponent_Host_0,{
   timeOut: 'timeOut',
   showProgressBar: 'showProgressBar',
   pauseOnHover: 'pauseOnHover',
   clickToClose: 'clickToClose',
-  maxLength: 'maxLength',
   theClass: 'theClass',
-  rtl: 'rtl',
   animate: 'animate',
   position: 'position',
   item: 'item'
 }
 ,{},([] as any[]));
-//# sourceMappingURL=data:application/json;base64,eyJmaWxlIjoiQzovVXNlcnMvZmF0ZW4vRG9jdW1lbnRzL05vYmxlIGNvZGUvYW5ndWxhcjItbm90aWZpY2F0aW9ucy9zcmMvbm90aWZpY2F0aW9uLmNvbXBvbmVudC5uZ2ZhY3RvcnkudHMiLCJ2ZXJzaW9uIjozLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJuZzovLy9DOi9Vc2Vycy9mYXRlbi9Eb2N1bWVudHMvTm9ibGUgY29kZS9hbmd1bGFyMi1ub3RpZmljYXRpb25zL3NyYy9ub3RpZmljYXRpb24uY29tcG9uZW50LnRzIiwibmc6Ly8vQzovVXNlcnMvZmF0ZW4vRG9jdW1lbnRzL05vYmxlIGNvZGUvYW5ndWxhcjItbm90aWZpY2F0aW9ucy9zcmMvbm90aWZpY2F0aW9uLmNvbXBvbmVudC50cy5Ob3RpZmljYXRpb25Db21wb25lbnQuaHRtbCIsIm5nOi8vL0M6L1VzZXJzL2ZhdGVuL0RvY3VtZW50cy9Ob2JsZSBjb2RlL2FuZ3VsYXIyLW5vdGlmaWNhdGlvbnMvc3JjL25vdGlmaWNhdGlvbi5jb21wb25lbnQudHMuTm90aWZpY2F0aW9uQ29tcG9uZW50X0hvc3QuaHRtbCJdLCJzb3VyY2VzQ29udGVudCI6WyIgIiwiXG4gICAgICAgIDxkaXYgY2xhc3M9XCJzaW1wbGUtbm90aWZpY2F0aW9uXCJcbiAgICAgICAgICAgIFtAZW50ZXJMZWF2ZV09XCJpdGVtLnN0YXRlXCJcbiAgICAgICAgICAgIChjbGljayk9XCJvbkNsaWNrKCRldmVudClcIlxuICAgICAgICAgICAgW2NsYXNzXT1cInRoZUNsYXNzXCJcblxuICAgICAgICAgICAgW25nQ2xhc3NdPVwie1xuICAgICAgICAgICAgICAgICdhbGVydCc6IGl0ZW0udHlwZSA9PT0gJ2FsZXJ0JyxcbiAgICAgICAgICAgICAgICAnZXJyb3InOiBpdGVtLnR5cGUgPT09ICdlcnJvcicsXG4gICAgICAgICAgICAgICAgJ3N1Y2Nlc3MnOiBpdGVtLnR5cGUgPT09ICdzdWNjZXNzJyxcbiAgICAgICAgICAgICAgICAnaW5mbyc6IGl0ZW0udHlwZSA9PT0gJ2luZm8nLFxuICAgICAgICAgICAgICAgICdiYXJlJzogaXRlbS50eXBlID09PSAnYmFyZScsXG4gICAgICAgICAgICAgICAgJ3J0bC1tb2RlJzogcnRsXG4gICAgICAgICAgICB9XCJcblxuICAgICAgICAgICAgKG1vdXNlZW50ZXIpPVwib25FbnRlcigpXCJcbiAgICAgICAgICAgIChtb3VzZWxlYXZlKT1cIm9uTGVhdmUoKVwiPlxuXG4gICAgICAgICAgICA8ZGl2ICpuZ0lmPVwiIWl0ZW0uY29tcG9uZW50XCI+XG4gICAgICAgICAgICAgICAgPGRpdiBjbGFzcz1cInNuLXRpdGxlXCI+e3tpdGVtLnRpdGxlfX08L2Rpdj5cbiAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzPVwic24tY29udGVudFwiPnt7aXRlbS5jb250ZW50IHwgbWF4Om1heExlbmd0aH19PC9kaXY+XG5cbiAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzPVwiaWNvblwiICpuZ0lmPVwiaXRlbS5pY29uICE9PSAnYmFyZSdcIiBbaW5uZXJIVE1MXT1cInNhZmVTdmdcIj48L2Rpdj5cbiAgICAgICAgICAgIDwvZGl2PlxuICAgICAgICAgICAgPG5nLXRlbXBsYXRlIFtuZ0lmXT1cIml0ZW0uY29tcG9uZW50XCI+XG4gICAgICAgICAgICAgICAgPG5nLWNvbnRhaW5lciAqbmdDb21wb25lbnRPdXRsZXQ9XCJpdGVtLmNvbXBvbmVudFwiPjwvbmctY29udGFpbmVyPlxuICAgICAgICAgICAgPC9uZy10ZW1wbGF0ZT5cblxuICAgICAgICAgICAgPGRpdiBjbGFzcz1cInNuLXByb2dyZXNzLWxvYWRlclwiICpuZ0lmPVwic2hvd1Byb2dyZXNzQmFyXCI+XG4gICAgICAgICAgICAgICAgPHNwYW4gW25nU3R5bGVdPVwieyd3aWR0aCc6IHByb2dyZXNzV2lkdGggKyAnJSd9XCI+PC9zcGFuPlxuICAgICAgICAgICAgPC9kaXY+XG5cbiAgICAgICAgPC9kaXY+XG4gICAgIiwiPHNpbXBsZS1ub3RpZmljYXRpb24+PC9zaW1wbGUtbm90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
+//# sourceMappingURL=data:application/json;base64,eyJmaWxlIjoiQzovVXNlcnMvZmF0ZW4vRG9jdW1lbnRzL05vYmxlIGNvZGUvYW5ndWxhcjItbm90aWZpY2F0aW9ucy9zcmMvbm90aWZpY2F0aW9uLmNvbXBvbmVudC5uZ2ZhY3RvcnkudHMiLCJ2ZXJzaW9uIjozLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJuZzovLy9DOi9Vc2Vycy9mYXRlbi9Eb2N1bWVudHMvTm9ibGUgY29kZS9hbmd1bGFyMi1ub3RpZmljYXRpb25zL3NyYy9ub3RpZmljYXRpb24uY29tcG9uZW50LnRzIiwibmc6Ly8vQzovVXNlcnMvZmF0ZW4vRG9jdW1lbnRzL05vYmxlIGNvZGUvYW5ndWxhcjItbm90aWZpY2F0aW9ucy9zcmMvbm90aWZpY2F0aW9uLmNvbXBvbmVudC50cy5Ob3RpZmljYXRpb25Db21wb25lbnQuaHRtbCIsIm5nOi8vL0M6L1VzZXJzL2ZhdGVuL0RvY3VtZW50cy9Ob2JsZSBjb2RlL2FuZ3VsYXIyLW5vdGlmaWNhdGlvbnMvc3JjL25vdGlmaWNhdGlvbi5jb21wb25lbnQudHMuTm90aWZpY2F0aW9uQ29tcG9uZW50X0hvc3QuaHRtbCJdLCJzb3VyY2VzQ29udGVudCI6WyIgIiwiXG4gICAgICAgIDxkaXYgY2xhc3M9XCJzaW1wbGUtbm90aWZpY2F0aW9uXCJcbiAgICAgICAgICAgIFtAZW50ZXJMZWF2ZV09XCJpdGVtLnN0YXRlXCJcbiAgICAgICAgICAgIChjbGljayk9XCJvbkNsaWNrKCRldmVudClcIlxuICAgICAgICAgICAgW2NsYXNzXT1cInRoZUNsYXNzXCJcblxuICAgICAgICAgICAgKG1vdXNlZW50ZXIpPVwib25FbnRlcigpXCJcbiAgICAgICAgICAgIChtb3VzZWxlYXZlKT1cIm9uTGVhdmUoKVwiPlxuXG4gICAgICAgICAgICA8ZGl2IGNsYXNzPVwiYi1ub3RpZmljYXRpb25cIj5cbiAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzPVwiYi1ub3RpZmljYXRpb25fX2JvZHlcIj5cbiAgICAgICAgICAgICAgICAgICAgPGRpdiBjbGFzcz1cImItbm90aWZpY2F0aW9uX19pY29uXCIgW2lubmVySFRNTF09XCJpdGVtLmljb25cIj48L2Rpdj5cbiAgICAgICAgICAgICAgICAgICAgPGRpdiBjbGFzcz1cImItbm90aWZpY2F0aW9uX19jb250ZW50XCI+XG4gICAgICAgICAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzPVwiYi1ub3RpZmljYXRpb25fX3RpdGxlXCI+e3sgaXRlbS50aXRsZSB9fTwvZGl2PlxuICAgICAgICAgICAgICAgICAgICAgICAgPGRpdiBjbGFzcz1cImItbm90aWZpY2F0aW9uX19kZXNjclwiPj57eyBpdGVtLmRlc2NyIH19PC9kaXY+XG4gICAgICAgICAgICAgICAgICAgIDwvZGl2PlxuICAgICAgICAgICAgICAgIDwvZGl2PlxuICAgICAgICAgICAgICAgIDxkaXYgY2xhc3M9XCJiLW5vdGlmaWNhdGlvbl9fZm9vdGVyXCI+XG4gICAgICAgICAgICAgICAgICAgIDxuZy10ZW1wbGF0ZSBuZ0ZvciBsZXQtYnRuIFtuZ0Zvck9mXT1cIml0ZW0uYnV0dG9uc1wiPlxuICAgICAgICAgICAgICAgICAgICAgICAgPGEgY2xhc3M9XCJiLW5vdGlmaWNhdGlvbl9fYnV0dG9uXCIgKm5nSWY9XCJidG4uYWN0aW9uXCIgKGNsaWNrKT1cImJ0bi5hY3Rpb24oKTtcIj57eyBidG4udGl0bGUgfX08L2E+XG4gICAgICAgICAgICAgICAgICAgICAgICA8YSBjbGFzcz1cImItbm90aWZpY2F0aW9uX19idXR0b25cIiAqbmdJZj1cImJ0bi5saW5rXCIgW2hyZWZdPVwiYnRuLmxpbmtcIj57eyBidG4udGl0bGUgfX08L2E+XG4gICAgICAgICAgICAgICAgICAgIDwvbmctdGVtcGxhdGU+XG4gICAgICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgICAgICAgPGEgY2xhc3M9XCJiLW5vdGlmaWNhdGlvbl9fY2xvc2UtYnRuXCIgKGNsaWNrKT1cInJlbW92ZSgpO1wiPlxuICAgICAgICAgICAgICAgICAgICA8c3ZnIGNsYXNzPVwibmMtaWNvbiBvdXRsaW5lXCIgaGVpZ2h0PVwiMjRcIiB2aWV3Qm94PVwiMCAwIDI0IDI0XCIgd2lkdGg9XCIyNFwiIHhtbG5zPVwiaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmdcIj5cbiAgICAgICAgICAgICAgICAgICAgICAgIDxnIGZpbGw9XCJub25lXCIgc3Ryb2tlPVwiIzk5OVwiIHN0cm9rZS1saW5lY2FwPVwic3F1YXJlXCIgc3Ryb2tlLW1pdGVybGltaXQ9XCIxMFwiIHN0cm9rZS13aWR0aD1cIjJcIj5cbiAgICAgICAgICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPVwiTTE2IDhsLTggOE0xNiAxNkw4IDhcIj48L3BhdGg+XG4gICAgICAgICAgICAgICAgICAgICAgICA8L2c+XG4gICAgICAgICAgICAgICAgICAgIDwvc3ZnPlxuICAgICAgICAgICAgICAgIDwvYT5cbiAgICAgICAgICAgIDwvZGl2PlxuXG4gICAgICAgICAgICA8ZGl2IGNsYXNzPVwic24tcHJvZ3Jlc3MtbG9hZGVyXCIgKm5nSWY9XCJzaG93UHJvZ3Jlc3NCYXJcIj5cbiAgICAgICAgICAgICAgICA8c3BhbiBbbmdTdHlsZV09XCJ7J3dpZHRoJzogcHJvZ3Jlc3NXaWR0aCArICclJ31cIj48L3NwYW4+XG4gICAgICAgICAgICA8L2Rpdj5cblxuICAgICAgICA8L2Rpdj5cbiAgICAiLCI8c2ltcGxlLW5vdGlmaWNhdGlvbj48L3NpbXBsZS1ub3RpZmljYXRpb24+Il0sIm1hcHBpbmdzIjoiQUFBQTs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7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

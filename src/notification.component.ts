@@ -1,6 +1,5 @@
 import {Component, OnInit, OnDestroy, Input, ViewEncapsulation, NgZone} from '@angular/core';
 import {trigger, state, style, transition, animate} from '@angular/animations';
-import {DomSanitizer, SafeHtml} from '@angular/platform-browser';
 import {Notification} from './notification.type';
 import {NotificationsService} from './notifications.service';
 
@@ -65,27 +64,31 @@ import {NotificationsService} from './notifications.service';
             (click)="onClick($event)"
             [class]="theClass"
 
-            [ngClass]="{
-                'alert': item.type === 'alert',
-                'error': item.type === 'error',
-                'success': item.type === 'success',
-                'info': item.type === 'info',
-                'bare': item.type === 'bare',
-                'rtl-mode': rtl
-            }"
-
             (mouseenter)="onEnter()"
             (mouseleave)="onLeave()">
 
-            <div *ngIf="!item.component">
-                <div class="sn-title">{{item.title}}</div>
-                <div class="sn-content">{{item.content | max:maxLength}}</div>
-
-                <div class="icon" *ngIf="item.icon !== 'bare'" [innerHTML]="safeSvg"></div>
+            <div class="b-notification">
+                <div class="b-notification__body">
+                    <div class="b-notification__icon" [innerHTML]="item.icon"></div>
+                    <div class="b-notification__content">
+                        <div class="b-notification__title">{{ item.title }}</div>
+                        <div class="b-notification__descr">>{{ item.descr }}</div>
+                    </div>
+                </div>
+                <div class="b-notification__footer">
+                    <ng-template ngFor let-btn [ngForOf]="item.buttons">
+                        <a class="b-notification__button" *ngIf="btn.action" (click)="btn.action();">{{ btn.title }}</a>
+                        <a class="b-notification__button" *ngIf="btn.link" [href]="btn.link">{{ btn.title }}</a>
+                    </ng-template>
+                </div>
+                <a class="b-notification__close-btn" (click)="remove();">
+                    <svg class="nc-icon outline" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                        <g fill="none" stroke="#999" stroke-linecap="square" stroke-miterlimit="10" stroke-width="2">
+                            <path d="M16 8l-8 8M16 16L8 8"></path>
+                        </g>
+                    </svg>
+                </a>
             </div>
-            <ng-template [ngIf]="item.component">
-                <ng-container *ngComponentOutlet="item.component"></ng-container>
-            </ng-template>
 
             <div class="sn-progress-loader" *ngIf="showProgressBar">
                 <span [ngStyle]="{'width': progressWidth + '%'}"></span>
@@ -104,53 +107,7 @@ import {NotificationsService} from './notifications.service';
             color: #fff;
             cursor: pointer;
             transition: all 0.5s;
-        }
-
-        .simple-notification .sn-title {
-            margin: 0;
-            padding: 0 50px 0 0;
-            line-height: 30px;
-            font-size: 20px;
-        }
-
-        .simple-notification .sn-content {
-            margin: 0;
-            font-size: 16px;
-            padding: 0 50px 0 0;
-            line-height: 20px;
-        }
-
-        .simple-notification .icon {
-            position: absolute;
-            box-sizing: border-box;
-            top: 0;
-            right: 0;
-            width: 70px;
-            height: 70px;
-            padding: 10px;
-        }
-
-        .simple-notification .icon svg {
-            fill: #fff;
-        }
-
-        .simple-notification.rtl-mode {
-            direction: rtl;
-        }
-
-        .simple-notification.rtl-mode .sn-content {
-            padding: 0 0 0 50px;
-        }
-
-        .simple-notification.rtl-mode svg {
-            left: 0;
-            right: auto;
-        }
-
-        .simple-notification.error { background: #F44336; }
-        .simple-notification.success { background: #8BC34A; }
-        .simple-notification.alert { background: #ffdb5b; }
-        .simple-notification.info { background: #03A9F4; }
+        }}
 
         .simple-notification .sn-progress-loader {
             position: absolute;
@@ -163,13 +120,8 @@ import {NotificationsService} from './notifications.service';
         .simple-notification .sn-progress-loader span {
             float: left;
             height: 100%;
+            background: #ccc;
         }
-
-        .simple-notification.success .sn-progress-loader span { background: #689F38; }
-        .simple-notification.error .sn-progress-loader span { background: #D32F2F; }
-        .simple-notification.alert .sn-progress-loader span { background: #edc242; }
-        .simple-notification.info .sn-progress-loader span { background: #0288D1; }
-        .simple-notification.bare .sn-progress-loader span { background: #ccc; }
     `]
 })
 
@@ -179,9 +131,7 @@ export class NotificationComponent implements OnInit, OnDestroy {
     @Input() public showProgressBar: boolean;
     @Input() public pauseOnHover: boolean;
     @Input() public clickToClose: boolean;
-    @Input() public maxLength: number;
     @Input() public theClass: string;
-    @Input() public rtl: boolean;
     @Input() public animate: string;
     @Input() public position: number;
     @Input() public item: Notification;
@@ -197,12 +147,8 @@ export class NotificationComponent implements OnInit, OnDestroy {
     private start: any;
     private diff: any;
 
-    private icon: string;
-    private safeSvg: SafeHtml;
-
     constructor(
         private notificationService: NotificationsService,
-        private domSanitizer: DomSanitizer,
         private zone: NgZone
     ) {}
 
@@ -217,7 +163,6 @@ export class NotificationComponent implements OnInit, OnDestroy {
             this.startTimeOut();
         }
 
-        this.safeSvg = this.domSanitizer.bypassSecurityTrustHtml(this.icon || this.item.icon);
     }
 
     startTimeOut(): void {
@@ -245,8 +190,6 @@ export class NotificationComponent implements OnInit, OnDestroy {
     }
 
     onClick($e: MouseEvent): void {
-        this.item.click!.emit($e);
-
         if (this.clickToClose) {
             this.remove();
         }
@@ -278,7 +221,7 @@ export class NotificationComponent implements OnInit, OnDestroy {
         })
     };
 
-    private remove() {
+    public remove() {
         if (this.animate) {
             this.item.state = this.animate + 'Out';
             this.zone.runOutsideAngular(() => {
