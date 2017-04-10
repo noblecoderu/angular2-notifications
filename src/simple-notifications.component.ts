@@ -138,7 +138,7 @@ export class SimpleNotificationsComponent implements OnInit, OnDestroy {
     // Check if notifications should be prevented
     block(item: Notification): boolean {
 
-        let toCheck = item.html ? this.checkHtml : this.checkStandard;
+        let toCheck = item.component ? this.checkHtml : this.checkStandard;
 
         if (this.preventDuplicates && this.notifications.length > 0) {
             for (let i = 0; i < this.notifications.length; i++) {
@@ -174,7 +174,7 @@ export class SimpleNotificationsComponent implements OnInit, OnDestroy {
     }
 
     checkHtml(checker: Notification, item: Notification): boolean {
-        return checker.html ? checker.type === item.type && checker.title === item.title && checker.content === item.content && checker.html === item.html : false;
+        return checker.component ? checker.type === item.type && checker.title === item.title && checker.content === item.content && checker.component === item.component : false;
     }
 
     // Attach all the changes received in the options object
@@ -194,8 +194,8 @@ export class SimpleNotificationsComponent implements OnInit, OnDestroy {
             id: notification.id
         };
 
-        if (notification.html) {
-            toEmit.html = notification.html;
+        if (notification.component) {
+            toEmit.component = notification.component;
         } else {
             toEmit.title = notification.title;
             toEmit.content = notification.content;

@@ -1,4 +1,4 @@
-import {Injectable, EventEmitter} from '@angular/core';
+import {Injectable, EventEmitter, Type} from '@angular/core';
 import {Subject} from 'rxjs/Subject';
 import {NotificationEvent} from './notification-event.type';
 import {Notification} from './notification.type';
@@ -54,8 +54,8 @@ export class NotificationsService {
   }
 
   // HTML Notification method
-  html(html: any, type: string, override?: any) {
-    return this.set({html: html, type: type, icon: 'bare', override: override}, true);
+  withComponent(component: Type<any>, override?: any) {
+    return this.set({component: component, type: 'bare', icon: 'bare', override: override}, true);
   }
 
   // Remove all notifications method

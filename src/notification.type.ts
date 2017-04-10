@@ -1,4 +1,4 @@
-import { EventEmitter } from '@angular/core';
+import { EventEmitter, Type } from '@angular/core';
 
 export interface Notification {
     id?: string
@@ -7,7 +7,6 @@ export interface Notification {
     title?: string
     content?: string
     override?: any
-    html?: any
     state?: string
     createdOn?: Date
     destroyedOn?: Date
@@ -17,5 +16,6 @@ export interface Notification {
     pauseOnHover?: boolean
     clickToClose?: boolean
     theClass?: string
+    component?: Type<any>
     click?: EventEmitter<{}>;
 }

@@ -77,13 +77,15 @@ import {NotificationsService} from './notifications.service';
             (mouseenter)="onEnter()"
             (mouseleave)="onLeave()">
 
-            <div *ngIf="!item.html">
+            <div *ngIf="!item.component">
                 <div class="sn-title">{{item.title}}</div>
                 <div class="sn-content">{{item.content | max:maxLength}}</div>
 
                 <div class="icon" *ngIf="item.icon !== 'bare'" [innerHTML]="safeSvg"></div>
             </div>
-            <div *ngIf="item.html" [innerHTML]="HTML"></div>
+            <ng-template [ngIf]="item.component">
+                <ng-container *ngComponentOutlet="item.component"></ng-container>
+            </ng-template>
 
             <div class="sn-progress-loader" *ngIf="showProgressBar">
                 <span [ngStyle]="{'width': progressWidth + '%'}"></span>
@@ -287,9 +289,5 @@ export class NotificationComponent implements OnInit, OnDestroy {
         } else {
             this.notificationService.set(this.item, false);
         }
-    }
-
-    public get HTML(): SafeHtml {
-        return this.domSanitizer.bypassSecurityTrustHtml(this.item.html);
     }
 }
