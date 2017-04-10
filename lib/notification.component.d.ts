@@ -1,5 +1,5 @@
 import { OnInit, OnDestroy, NgZone } from '@angular/core';
-import { DomSanitizer } from '@angular/platform-browser';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { Notification } from './notification.type';
 import { NotificationsService } from './notifications.service';
 export declare class NotificationComponent implements OnInit, OnDestroy {
@@ -37,4 +37,5 @@ export declare class NotificationComponent implements OnInit, OnDestroy {
     ngOnDestroy(): void;
     private instance;
     private remove();
+    readonly HTML: SafeHtml;
 }

@@ -17,7 +17,6 @@ tests/webpack.test.d.ts
 tests/webpack.test.js
 tests/webpack.test.js.map
 coverage
-aot
 yarn.**
 src/*.d.ts
 src/*.js
