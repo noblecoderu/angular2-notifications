@@ -7,7 +7,6 @@ example/aot
 .idea
 .vscode
 .npmignore
-lib
 tests/testing-utils.d.ts
 tests/testing-utils.js.map
 tests/testing-utils.js

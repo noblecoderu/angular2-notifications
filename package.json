@@ -12,8 +12,7 @@
     "tsc:aot": "ngc -p tsconfig.aot.json",
     "test": "karma start",
     "tsc-test": "cd tests && tsc",
-    "prepublish": "ngc -p tsconfig.aot.json",
-    "postinstall": "ngc -p tsconfig.aot.json"
+    "prepublish": "ngc -p tsconfig.aot.json"
   },
   "keywords": [
     "Angular",
