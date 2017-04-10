@@ -72,7 +72,7 @@ import {NotificationsService} from './notifications.service';
                     <div class="b-notification__icon" [innerHTML]="item.icon"></div>
                     <div class="b-notification__content">
                         <div class="b-notification__title">{{ item.title }}</div>
-                        <div class="b-notification__descr">>{{ item.descr }}</div>
+                        <div class="b-notification__descr">{{ item.descr }}</div>
                     </div>
                 </div>
                 <div class="b-notification__footer">
