@@ -26,14 +26,14 @@ import {Subscription} from 'rxjs/Subscription';
     styles: [`
         .simple-notification-wrapper {
             position: fixed;
-            width: 300px;
+            width: 360px;
             z-index: 1000;
         }
         
         .simple-notification-wrapper.left { left: 20px; }
         .simple-notification-wrapper.top { top: 20px; }
-        .simple-notification-wrapper.right { right: 20px; }
-        .simple-notification-wrapper.bottom { bottom: 20px; }
+        .simple-notification-wrapper.right { right: 0px; }
+        .simple-notification-wrapper.bottom { bottom: 0px; }
         
         @media (max-width: 340px) {
             .simple-notification-wrapper {
