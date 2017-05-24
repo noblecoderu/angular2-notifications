@@ -1,4 +1,5 @@
 import {NgModule, ModuleWithProviders} from '@angular/core';
+import {RouterModule} from '@angular/router';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {CommonModule} from '@angular/common';
 import {NotificationsService} from './notifications.service';
@@ -7,7 +8,7 @@ import {NotificationComponent} from './notification.component';
 import {MaxPipe} from './max.pipe';
 
 @NgModule({
-  imports: [CommonModule, BrowserAnimationsModule],
+  imports: [CommonModule, BrowserAnimationsModule, RouterModule],
   declarations: [SimpleNotificationsComponent, NotificationComponent, MaxPipe],
   providers: [],
   exports: [SimpleNotificationsComponent]

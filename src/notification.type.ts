@@ -16,7 +16,7 @@ export interface NotifyButtons {
     /**
      * Ссылка
      */
-    link?: string
+    link?: string[]
 }
 
 export interface Notification {

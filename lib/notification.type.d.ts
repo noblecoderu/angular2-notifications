@@ -2,7 +2,7 @@ import { SafeHtml } from '@angular/platform-browser';
 export interface NotifyButtons {
     title: string;
     action?: Function;
-    link?: string;
+    link?: string[];
 }
 export interface Notification {
     id?: string;

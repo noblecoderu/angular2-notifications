@@ -11,7 +11,8 @@ import * as import1 from '../../src/simple-notifications.module';
 import * as import2 from '@angular/common';
 import * as import3 from '@angular/platform-browser';
 import * as import4 from '@angular/platform-browser/animations';
-import * as import5 from '@angular/animations/browser';
+import * as import5 from '@angular/router';
+import * as import6 from '@angular/animations/browser';
 class SimpleNotificationsModuleInjector extends import0.ɵNgModuleInjector<import1.SimpleNotificationsModule> {
   _CommonModule_0:import2.CommonModule;
   _ErrorHandler_1:any;
@@ -22,119 +23,120 @@ class SimpleNotificationsModuleInjector extends import0.ɵNgModuleInjector<impor
   _ApplicationModule_6:import0.ApplicationModule;
   _BrowserModule_7:import3.BrowserModule;
   _BrowserAnimationsModule_8:import4.BrowserAnimationsModule;
-  _SimpleNotificationsModule_9:import1.SimpleNotificationsModule;
-  __LOCALE_ID_10:any;
-  __NgLocalization_11:import2.NgLocaleLocalization;
-  __Compiler_12:import0.Compiler;
-  __APP_ID_13:any;
-  __IterableDiffers_14:any;
-  __KeyValueDiffers_15:any;
-  __DomSanitizer_16:import3.ɵe;
-  __Sanitizer_17:any;
-  __HAMMER_GESTURE_CONFIG_18:import3.HammerGestureConfig;
-  __EVENT_MANAGER_PLUGINS_19:any[];
-  __EventManager_20:import3.EventManager;
-  __ɵDomSharedStylesHost_21:import3.ɵDomSharedStylesHost;
-  __ɵDomRendererFactory2_22:import3.ɵDomRendererFactory2;
-  __AnimationDriver_23:any;
-  __ɵAnimationStyleNormalizer_24:any;
-  __ɵAnimationEngine_25:import4.ɵa;
-  __RendererFactory2_26:any;
-  __ɵSharedStylesHost_27:any;
-  __Testability_28:import0.Testability;
-  __Meta_29:import3.Meta;
-  __Title_30:import3.Title;
+  _RouterModule_9:import5.RouterModule;
+  _SimpleNotificationsModule_10:import1.SimpleNotificationsModule;
+  __LOCALE_ID_11:any;
+  __NgLocalization_12:import2.NgLocaleLocalization;
+  __Compiler_13:import0.Compiler;
+  __APP_ID_14:any;
+  __IterableDiffers_15:any;
+  __KeyValueDiffers_16:any;
+  __DomSanitizer_17:import3.ɵe;
+  __Sanitizer_18:any;
+  __HAMMER_GESTURE_CONFIG_19:import3.HammerGestureConfig;
+  __EVENT_MANAGER_PLUGINS_20:any[];
+  __EventManager_21:import3.EventManager;
+  __ɵDomSharedStylesHost_22:import3.ɵDomSharedStylesHost;
+  __ɵDomRendererFactory2_23:import3.ɵDomRendererFactory2;
+  __AnimationDriver_24:any;
+  __ɵAnimationStyleNormalizer_25:any;
+  __ɵAnimationEngine_26:import4.ɵa;
+  __RendererFactory2_27:any;
+  __ɵSharedStylesHost_28:any;
+  __Testability_29:import0.Testability;
+  __Meta_30:import3.Meta;
+  __Title_31:import3.Title;
   constructor(parent:import0.Injector) {
     super(parent,([] as any[]),([] as any[]));
   }
-  get _LOCALE_ID_10():any {
-    if ((this.__LOCALE_ID_10 == null)) { (this.__LOCALE_ID_10 = import0.ɵn(this.parent.get(import0.LOCALE_ID,(null as any)))); }
-    return this.__LOCALE_ID_10;
+  get _LOCALE_ID_11():any {
+    if ((this.__LOCALE_ID_11 == null)) { (this.__LOCALE_ID_11 = import0.ɵn(this.parent.get(import0.LOCALE_ID,(null as any)))); }
+    return this.__LOCALE_ID_11;
   }
-  get _NgLocalization_11():import2.NgLocaleLocalization {
-    if ((this.__NgLocalization_11 == null)) { (this.__NgLocalization_11 = new import2.NgLocaleLocalization(this._LOCALE_ID_10)); }
-    return this.__NgLocalization_11;
+  get _NgLocalization_12():import2.NgLocaleLocalization {
+    if ((this.__NgLocalization_12 == null)) { (this.__NgLocalization_12 = new import2.NgLocaleLocalization(this._LOCALE_ID_11)); }
+    return this.__NgLocalization_12;
   }
-  get _Compiler_12():import0.Compiler {
-    if ((this.__Compiler_12 == null)) { (this.__Compiler_12 = new import0.Compiler()); }
-    return this.__Compiler_12;
+  get _Compiler_13():import0.Compiler {
+    if ((this.__Compiler_13 == null)) { (this.__Compiler_13 = new import0.Compiler()); }
+    return this.__Compiler_13;
   }
-  get _APP_ID_13():any {
-    if ((this.__APP_ID_13 == null)) { (this.__APP_ID_13 = import0.ɵg()); }
-    return this.__APP_ID_13;
+  get _APP_ID_14():any {
+    if ((this.__APP_ID_14 == null)) { (this.__APP_ID_14 = import0.ɵg()); }
+    return this.__APP_ID_14;
   }
-  get _IterableDiffers_14():any {
-    if ((this.__IterableDiffers_14 == null)) { (this.__IterableDiffers_14 = import0.ɵl()); }
-    return this.__IterableDiffers_14;
+  get _IterableDiffers_15():any {
+    if ((this.__IterableDiffers_15 == null)) { (this.__IterableDiffers_15 = import0.ɵl()); }
+    return this.__IterableDiffers_15;
   }
-  get _KeyValueDiffers_15():any {
-    if ((this.__KeyValueDiffers_15 == null)) { (this.__KeyValueDiffers_15 = import0.ɵm()); }
-    return this.__KeyValueDiffers_15;
+  get _KeyValueDiffers_16():any {
+    if ((this.__KeyValueDiffers_16 == null)) { (this.__KeyValueDiffers_16 = import0.ɵm()); }
+    return this.__KeyValueDiffers_16;
   }
-  get _DomSanitizer_16():import3.ɵe {
-    if ((this.__DomSanitizer_16 == null)) { (this.__DomSanitizer_16 = new import3.ɵe(this.parent.get(import3.DOCUMENT))); }
-    return this.__DomSanitizer_16;
+  get _DomSanitizer_17():import3.ɵe {
+    if ((this.__DomSanitizer_17 == null)) { (this.__DomSanitizer_17 = new import3.ɵe(this.parent.get(import3.DOCUMENT))); }
+    return this.__DomSanitizer_17;
   }
-  get _Sanitizer_17():any {
-    if ((this.__Sanitizer_17 == null)) { (this.__Sanitizer_17 = this._DomSanitizer_16); }
-    return this.__Sanitizer_17;
+  get _Sanitizer_18():any {
+    if ((this.__Sanitizer_18 == null)) { (this.__Sanitizer_18 = this._DomSanitizer_17); }
+    return this.__Sanitizer_18;
   }
-  get _HAMMER_GESTURE_CONFIG_18():import3.HammerGestureConfig {
-    if ((this.__HAMMER_GESTURE_CONFIG_18 == null)) { (this.__HAMMER_GESTURE_CONFIG_18 = new import3.HammerGestureConfig()); }
-    return this.__HAMMER_GESTURE_CONFIG_18;
+  get _HAMMER_GESTURE_CONFIG_19():import3.HammerGestureConfig {
+    if ((this.__HAMMER_GESTURE_CONFIG_19 == null)) { (this.__HAMMER_GESTURE_CONFIG_19 = new import3.HammerGestureConfig()); }
+    return this.__HAMMER_GESTURE_CONFIG_19;
   }
-  get _EVENT_MANAGER_PLUGINS_19():any[] {
-    if ((this.__EVENT_MANAGER_PLUGINS_19 == null)) { (this.__EVENT_MANAGER_PLUGINS_19 = [
+  get _EVENT_MANAGER_PLUGINS_20():any[] {
+    if ((this.__EVENT_MANAGER_PLUGINS_20 == null)) { (this.__EVENT_MANAGER_PLUGINS_20 = [
       new import3.ɵDomEventsPlugin(this.parent.get(import3.DOCUMENT)),
       new import3.ɵKeyEventsPlugin(this.parent.get(import3.DOCUMENT)),
-      new import3.ɵHammerGesturesPlugin(this.parent.get(import3.DOCUMENT),this._HAMMER_GESTURE_CONFIG_18)
+      new import3.ɵHammerGesturesPlugin(this.parent.get(import3.DOCUMENT),this._HAMMER_GESTURE_CONFIG_19)
     ]
     ); }
-    return this.__EVENT_MANAGER_PLUGINS_19;
+    return this.__EVENT_MANAGER_PLUGINS_20;
   }
-  get _EventManager_20():import3.EventManager {
-    if ((this.__EventManager_20 == null)) { (this.__EventManager_20 = new import3.EventManager(this._EVENT_MANAGER_PLUGINS_19,this.parent.get(import0.NgZone))); }
-    return this.__EventManager_20;
+  get _EventManager_21():import3.EventManager {
+    if ((this.__EventManager_21 == null)) { (this.__EventManager_21 = new import3.EventManager(this._EVENT_MANAGER_PLUGINS_20,this.parent.get(import0.NgZone))); }
+    return this.__EventManager_21;
   }
-  get _ɵDomSharedStylesHost_21():import3.ɵDomSharedStylesHost {
-    if ((this.__ɵDomSharedStylesHost_21 == null)) { (this.__ɵDomSharedStylesHost_21 = new import3.ɵDomSharedStylesHost(this.parent.get(import3.DOCUMENT))); }
-    return this.__ɵDomSharedStylesHost_21;
+  get _ɵDomSharedStylesHost_22():import3.ɵDomSharedStylesHost {
+    if ((this.__ɵDomSharedStylesHost_22 == null)) { (this.__ɵDomSharedStylesHost_22 = new import3.ɵDomSharedStylesHost(this.parent.get(import3.DOCUMENT))); }
+    return this.__ɵDomSharedStylesHost_22;
   }
-  get _ɵDomRendererFactory2_22():import3.ɵDomRendererFactory2 {
-    if ((this.__ɵDomRendererFactory2_22 == null)) { (this.__ɵDomRendererFactory2_22 = new import3.ɵDomRendererFactory2(this._EventManager_20,this._ɵDomSharedStylesHost_21)); }
-    return this.__ɵDomRendererFactory2_22;
+  get _ɵDomRendererFactory2_23():import3.ɵDomRendererFactory2 {
+    if ((this.__ɵDomRendererFactory2_23 == null)) { (this.__ɵDomRendererFactory2_23 = new import3.ɵDomRendererFactory2(this._EventManager_21,this._ɵDomSharedStylesHost_22)); }
+    return this.__ɵDomRendererFactory2_23;
   }
-  get _AnimationDriver_23():any {
-    if ((this.__AnimationDriver_23 == null)) { (this.__AnimationDriver_23 = import4.ɵb()); }
-    return this.__AnimationDriver_23;
+  get _AnimationDriver_24():any {
+    if ((this.__AnimationDriver_24 == null)) { (this.__AnimationDriver_24 = import4.ɵb()); }
+    return this.__AnimationDriver_24;
   }
-  get _ɵAnimationStyleNormalizer_24():any {
-    if ((this.__ɵAnimationStyleNormalizer_24 == null)) { (this.__ɵAnimationStyleNormalizer_24 = import4.ɵc()); }
-    return this.__ɵAnimationStyleNormalizer_24;
+  get _ɵAnimationStyleNormalizer_25():any {
+    if ((this.__ɵAnimationStyleNormalizer_25 == null)) { (this.__ɵAnimationStyleNormalizer_25 = import4.ɵc()); }
+    return this.__ɵAnimationStyleNormalizer_25;
   }
-  get _ɵAnimationEngine_25():import4.ɵa {
-    if ((this.__ɵAnimationEngine_25 == null)) { (this.__ɵAnimationEngine_25 = new import4.ɵa(this._AnimationDriver_23,this._ɵAnimationStyleNormalizer_24)); }
-    return this.__ɵAnimationEngine_25;
+  get _ɵAnimationEngine_26():import4.ɵa {
+    if ((this.__ɵAnimationEngine_26 == null)) { (this.__ɵAnimationEngine_26 = new import4.ɵa(this._AnimationDriver_24,this._ɵAnimationStyleNormalizer_25)); }
+    return this.__ɵAnimationEngine_26;
   }
-  get _RendererFactory2_26():any {
-    if ((this.__RendererFactory2_26 == null)) { (this.__RendererFactory2_26 = import4.ɵd(this._ɵDomRendererFactory2_22,this._ɵAnimationEngine_25,this.parent.get(import0.NgZone))); }
-    return this.__RendererFactory2_26;
+  get _RendererFactory2_27():any {
+    if ((this.__RendererFactory2_27 == null)) { (this.__RendererFactory2_27 = import4.ɵd(this._ɵDomRendererFactory2_23,this._ɵAnimationEngine_26,this.parent.get(import0.NgZone))); }
+    return this.__RendererFactory2_27;
   }
-  get _ɵSharedStylesHost_27():any {
-    if ((this.__ɵSharedStylesHost_27 == null)) { (this.__ɵSharedStylesHost_27 = this._ɵDomSharedStylesHost_21); }
-    return this.__ɵSharedStylesHost_27;
+  get _ɵSharedStylesHost_28():any {
+    if ((this.__ɵSharedStylesHost_28 == null)) { (this.__ɵSharedStylesHost_28 = this._ɵDomSharedStylesHost_22); }
+    return this.__ɵSharedStylesHost_28;
   }
-  get _Testability_28():import0.Testability {
-    if ((this.__Testability_28 == null)) { (this.__Testability_28 = new import0.Testability(this.parent.get(import0.NgZone))); }
-    return this.__Testability_28;
+  get _Testability_29():import0.Testability {
+    if ((this.__Testability_29 == null)) { (this.__Testability_29 = new import0.Testability(this.parent.get(import0.NgZone))); }
+    return this.__Testability_29;
   }
-  get _Meta_29():import3.Meta {
-    if ((this.__Meta_29 == null)) { (this.__Meta_29 = new import3.Meta(this.parent.get(import3.DOCUMENT))); }
-    return this.__Meta_29;
+  get _Meta_30():import3.Meta {
+    if ((this.__Meta_30 == null)) { (this.__Meta_30 = new import3.Meta(this.parent.get(import3.DOCUMENT))); }
+    return this.__Meta_30;
   }
-  get _Title_30():import3.Title {
-    if ((this.__Title_30 == null)) { (this.__Title_30 = new import3.Title(this.parent.get(import3.DOCUMENT))); }
-    return this.__Title_30;
+  get _Title_31():import3.Title {
+    if ((this.__Title_31 == null)) { (this.__Title_31 = new import3.Title(this.parent.get(import3.DOCUMENT))); }
+    return this.__Title_31;
   }
   createInternal():import1.SimpleNotificationsModule {
     this._CommonModule_0 = new import2.CommonModule();
@@ -150,8 +152,9 @@ class SimpleNotificationsModuleInjector extends import0.ɵNgModuleInjector<impor
     this._ApplicationModule_6 = new import0.ApplicationModule(this._ApplicationRef_5);
     this._BrowserModule_7 = new import3.BrowserModule(this.parent.get(import3.BrowserModule,(null as any)));
     this._BrowserAnimationsModule_8 = new import4.BrowserAnimationsModule();
-    this._SimpleNotificationsModule_9 = new import1.SimpleNotificationsModule();
-    return this._SimpleNotificationsModule_9;
+    this._RouterModule_9 = new import5.RouterModule(this.parent.get(import5.ɵa,(null as any)),this.parent.get(import5.Router,(null as any)));
+    this._SimpleNotificationsModule_10 = new import1.SimpleNotificationsModule();
+    return this._SimpleNotificationsModule_10;
   }
   getInternal(token:any,notFoundResult:any):any {
     if ((token === import2.CommonModule)) { return this._CommonModule_0; }
@@ -163,34 +166,35 @@ class SimpleNotificationsModuleInjector extends import0.ɵNgModuleInjector<impor
     if ((token === import0.ApplicationModule)) { return this._ApplicationModule_6; }
     if ((token === import3.BrowserModule)) { return this._BrowserModule_7; }
     if ((token === import4.BrowserAnimationsModule)) { return this._BrowserAnimationsModule_8; }
-    if ((token === import1.SimpleNotificationsModule)) { return this._SimpleNotificationsModule_9; }
-    if ((token === import0.LOCALE_ID)) { return this._LOCALE_ID_10; }
-    if ((token === import2.NgLocalization)) { return this._NgLocalization_11; }
-    if ((token === import0.Compiler)) { return this._Compiler_12; }
-    if ((token === import0.APP_ID)) { return this._APP_ID_13; }
-    if ((token === import0.IterableDiffers)) { return this._IterableDiffers_14; }
-    if ((token === import0.KeyValueDiffers)) { return this._KeyValueDiffers_15; }
-    if ((token === import3.DomSanitizer)) { return this._DomSanitizer_16; }
-    if ((token === import0.Sanitizer)) { return this._Sanitizer_17; }
-    if ((token === import3.HAMMER_GESTURE_CONFIG)) { return this._HAMMER_GESTURE_CONFIG_18; }
-    if ((token === import3.EVENT_MANAGER_PLUGINS)) { return this._EVENT_MANAGER_PLUGINS_19; }
-    if ((token === import3.EventManager)) { return this._EventManager_20; }
-    if ((token === import3.ɵDomSharedStylesHost)) { return this._ɵDomSharedStylesHost_21; }
-    if ((token === import3.ɵDomRendererFactory2)) { return this._ɵDomRendererFactory2_22; }
-    if ((token === import5.AnimationDriver)) { return this._AnimationDriver_23; }
-    if ((token === import5.ɵAnimationStyleNormalizer)) { return this._ɵAnimationStyleNormalizer_24; }
-    if ((token === import5.ɵAnimationEngine)) { return this._ɵAnimationEngine_25; }
-    if ((token === import0.RendererFactory2)) { return this._RendererFactory2_26; }
-    if ((token === import3.ɵSharedStylesHost)) { return this._ɵSharedStylesHost_27; }
-    if ((token === import0.Testability)) { return this._Testability_28; }
-    if ((token === import3.Meta)) { return this._Meta_29; }
-    if ((token === import3.Title)) { return this._Title_30; }
+    if ((token === import5.RouterModule)) { return this._RouterModule_9; }
+    if ((token === import1.SimpleNotificationsModule)) { return this._SimpleNotificationsModule_10; }
+    if ((token === import0.LOCALE_ID)) { return this._LOCALE_ID_11; }
+    if ((token === import2.NgLocalization)) { return this._NgLocalization_12; }
+    if ((token === import0.Compiler)) { return this._Compiler_13; }
+    if ((token === import0.APP_ID)) { return this._APP_ID_14; }
+    if ((token === import0.IterableDiffers)) { return this._IterableDiffers_15; }
+    if ((token === import0.KeyValueDiffers)) { return this._KeyValueDiffers_16; }
+    if ((token === import3.DomSanitizer)) { return this._DomSanitizer_17; }
+    if ((token === import0.Sanitizer)) { return this._Sanitizer_18; }
+    if ((token === import3.HAMMER_GESTURE_CONFIG)) { return this._HAMMER_GESTURE_CONFIG_19; }
+    if ((token === import3.EVENT_MANAGER_PLUGINS)) { return this._EVENT_MANAGER_PLUGINS_20; }
+    if ((token === import3.EventManager)) { return this._EventManager_21; }
+    if ((token === import3.ɵDomSharedStylesHost)) { return this._ɵDomSharedStylesHost_22; }
+    if ((token === import3.ɵDomRendererFactory2)) { return this._ɵDomRendererFactory2_23; }
+    if ((token === import6.AnimationDriver)) { return this._AnimationDriver_24; }
+    if ((token === import6.ɵAnimationStyleNormalizer)) { return this._ɵAnimationStyleNormalizer_25; }
+    if ((token === import6.ɵAnimationEngine)) { return this._ɵAnimationEngine_26; }
+    if ((token === import0.RendererFactory2)) { return this._RendererFactory2_27; }
+    if ((token === import3.ɵSharedStylesHost)) { return this._ɵSharedStylesHost_28; }
+    if ((token === import0.Testability)) { return this._Testability_29; }
+    if ((token === import3.Meta)) { return this._Meta_30; }
+    if ((token === import3.Title)) { return this._Title_31; }
     return notFoundResult;
   }
   destroyInternal():void {
     this._ɵf_4.ngOnDestroy();
-    (this.__ɵDomSharedStylesHost_21 && this._ɵDomSharedStylesHost_21.ngOnDestroy());
+    (this.__ɵDomSharedStylesHost_22 && this._ɵDomSharedStylesHost_22.ngOnDestroy());
   }
 }
 export const SimpleNotificationsModuleNgFactory:import0.NgModuleFactory<import1.SimpleNotificationsModule> = new import0.NgModuleFactory<any>(SimpleNotificationsModuleInjector,import1.SimpleNotificationsModule);
-//# sourceMappingURL=data:application/json;base64,eyJmaWxlIjoiL2hvbWUvYWxleG5pa2kvTm9ibGVjb2RlL2FuZ3VsYXIyLW5vdGlmaWNhdGlvbnMvc3JjL3NpbXBsZS1ub3RpZmljYXRpb25zLm1vZHVsZS5uZ2ZhY3RvcnkudHMiLCJ2ZXJzaW9uIjozLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJuZzovLy9ob21lL2FsZXhuaWtpL05vYmxlY29kZS9hbmd1bGFyMi1ub3RpZmljYXRpb25zL3NyYy9zaW1wbGUtbm90aWZpY2F0aW9ucy5tb2R1bGUudHMiXSwic291cmNlc0NvbnRlbnQiOlsiICJdLCJtYXBwaW5ncyI6IkFBQUE7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OyJ9
+//# sourceMappingURL=data:application/json;base64,eyJmaWxlIjoiL2hvbWUvYWxleG5pa2kvTm9ibGVjb2RlL2FuZ3VsYXIyLW5vdGlmaWNhdGlvbnMvc3JjL3NpbXBsZS1ub3RpZmljYXRpb25zLm1vZHVsZS5uZ2ZhY3RvcnkudHMiLCJ2ZXJzaW9uIjozLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJuZzovLy9ob21lL2FsZXhuaWtpL05vYmxlY29kZS9hbmd1bGFyMi1ub3RpZmljYXRpb25zL3NyYy9zaW1wbGUtbm90aWZpY2F0aW9ucy5tb2R1bGUudHMiXSwic291cmNlc0NvbnRlbnQiOlsiICJdLCJtYXBwaW5ncyI6IkFBQUE7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OzsifQ==
