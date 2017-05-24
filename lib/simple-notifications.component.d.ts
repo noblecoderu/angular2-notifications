@@ -16,12 +16,10 @@ export declare class SimpleNotificationsComponent implements OnInit, OnDestroy {
     private preventLastDuplicates;
     private preventDuplicates;
     timeOut: number;
-    maxLength: number;
     clickToClose: boolean;
     showProgressBar: boolean;
     pauseOnHover: boolean;
-    theClass: string;
-    rtl: boolean;
+    theClass: string[];
     animate: 'fromRight' | 'fromLeft' | 'rotate' | 'scale';
     constructor(_service: NotificationsService);
     ngOnInit(): void;
@@ -29,7 +27,6 @@ export declare class SimpleNotificationsComponent implements OnInit, OnDestroy {
     add(item: Notification): void;
     block(item: Notification): boolean;
     checkStandard(checker: Notification, item: Notification): boolean;
-    checkHtml(checker: Notification, item: Notification): boolean;
     attachChanges(options: any): void;
     buildEmit(notification: Notification, to: boolean): Notification;
     cleanSingle(id: string): void;

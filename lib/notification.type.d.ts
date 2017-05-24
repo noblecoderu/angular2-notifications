@@ -1,12 +1,16 @@
-import { EventEmitter } from '@angular/core';
+import { SafeHtml } from '@angular/platform-browser';
+export interface NotifyButtons {
+    title: string;
+    action?: Function;
+    link?: string;
+}
 export interface Notification {
     id?: string;
-    type: string;
-    icon: string;
+    icon?: SafeHtml;
     title?: string;
-    content?: string;
+    descr?: string;
+    buttons?: Array<NotifyButtons>;
     override?: any;
-    html?: any;
     state?: string;
     createdOn?: Date;
     destroyedOn?: Date;
@@ -15,6 +19,5 @@ export interface Notification {
     maxLength?: number;
     pauseOnHover?: boolean;
     clickToClose?: boolean;
-    theClass?: string;
-    click?: EventEmitter<{}>;
+    theClass?: string[];
 }
