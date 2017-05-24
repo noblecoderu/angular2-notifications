@@ -77,8 +77,8 @@ import {NotificationsService} from './notifications.service';
                 </div>
                 <div class="b-notification__footer" *ngIf="item.buttons && item.buttons.length > 0">
                     <ng-template ngFor let-btn [ngForOf]="item.buttons">
-                        <a class="b-notification__button" *ngIf="btn.action" (click)="btn.action();">{{ btn.title }}</a>
-                        <a class="b-notification__button" *ngIf="btn.link" [routerLink]="btn.link">{{ btn.title }}</a>
+                        <a class="b-notification__button" *ngIf="btn.action" (click)="btn.action(); remove();">{{ btn.title }}</a>
+                        <a class="b-notification__button" *ngIf="btn.link" (click)="remove();" [routerLink]="btn.link">{{ btn.title }}</a>
                     </ng-template>
                 </div>
                 <a class="b-notification__close-btn" (click)="remove();">
