@@ -2,7 +2,7 @@ import {Injectable, EventEmitter, Type} from '@angular/core';
 import {SafeHtml} from '@angular/platform-browser';
 import {Subject} from 'rxjs/Subject';
 import {NotificationEvent} from './notification-event.type';
-import {Notification} from './notification.type';
+import {Notification, NotifyButtons} from './notification.type';
 import {Icons, defaultIcons} from './icons';
 
 @Injectable()
@@ -26,10 +26,10 @@ export class NotificationsService {
    * @param title Заголовок всплывающего окна
    * @param descr Текстовое описание
    * @param icon Icon
-   * @param buttons Список действия
+   * @param buttons Список действий
    * @param override Переопределение глобальных настроек 
    */
-  create(title: string, descr: string, icon: SafeHtml, buttons: any[],  override?: any) {
+  create(title: string, descr: string, icon: SafeHtml, buttons: Array<NotifyButtons>,  override?: any) {
     return this.set({title: title, descr: descr, icon: icon, buttons: buttons, override: override}, true);
   }
 
